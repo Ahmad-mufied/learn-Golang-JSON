@@ -12,10 +12,14 @@ import (
 -	Pada materi sebelumnya kita melakukan encode data seperti string, number, boolean, dan tipe data primitif lainnya
 -	Walaupun memang bisa dilakukan, karena sesuai dengan kontrak interface{}, namun tidak sesuai dengan kontrak JSON
 -	Jika mengikuti kontrak json.org, data JSON bentuknya adalah Object dan Array
--	Sedangkan value nya baru berupa
-
 
 */
+
+type Address struct {
+	Street     string
+	Country    string
+	PostalCode string
+}
 
 type Customer struct {
 	FirstName  string
@@ -23,6 +27,8 @@ type Customer struct {
 	LastName   string
 	Age        int
 	Married    bool
+	Hobbies    []string
+	Addresses  []Address
 }
 
 func TestJSON(t *testing.T) {
